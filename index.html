@@ -44,31 +44,61 @@ font-size:32px;
 
 /* MENU */
 
+
 nav{
-
-background:#075b2d;
-display:flex;
-justify-content:center;
-flex-wrap:wrap;
-
+    background:#0b6b2d;
+    position:relative;
 }
 
-
-nav a{
-
-color:white;
-padding:15px 20px;
-text-decoration:none;
-
+.menu-icon{
+    font-size:30px;
+    color:white;
+    padding:15px;
+    cursor:pointer;
+    display:none;
 }
 
-
-nav a:hover{
-
-background:#0da354;
-
+.menu{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
 }
 
+.menu a{
+    color:white;
+    text-decoration:none;
+    padding:15px 20px;
+    display:block;
+    transition:0.3s;
+}
+
+.menu a:hover{
+    background:#0da354;
+}
+
+/* Tampilan HP */
+@media(max-width:768px){
+
+.menu-icon{
+    display:block;
+}
+
+.menu{
+    display:none;
+    flex-direction:column;
+    width:100%;
+}
+
+.menu.show{
+    display:flex;
+}
+
+.menu a{
+    border-top:1px solid rgba(255,255,255,.2);
+    text-align:center;
+}
+
+}
 
 
 /* BANNER FOTO DESA */
@@ -267,7 +297,11 @@ margin-bottom:10px;
 }
 
 
-</style>
+  <script>
+function toggleMenu(){
+    document.getElementById("menu").classList.toggle("show");
+}
+  </script>
 
 
 </head>
@@ -288,24 +322,20 @@ margin-bottom:10px;
 
 </header>
 
-
 <nav>
+    <div class="menu-icon" onclick="toggleMenu()">
+        ☰
+    </div>
 
-<a href="index.html">Beranda</a>
-
-<a href="profil.html">Profil Desa</a>
-
-<a href="berita.html">Berita</a>
-
-<a href="galeri.html">Galeri</a>
-
-<a href="kontak.html">Kontak</a>
-
-<a href="pengumuman.html">Pengumuman</a>
-
-<a href="admin.html">Admin</a>
-
-
+    <div id="menu" class="menu">
+        <a href="index.html">Beranda</a>
+        <a href="profil.html">Profil Desa</a>
+        <a href="berita.html">Berita</a>
+        <a href="galeri.html">Galeri</a>
+        <a href="kontak.html">Kontak</a>
+        <a href="pengumuman.html">Pengumuman</a>
+        <a href="admin.html">Admin</a>
+    </div>
 </nav>
 
 
